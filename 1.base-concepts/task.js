@@ -2,36 +2,31 @@
 
 function solveEquation(a, b, c) {
 	let arr = [];
+	const discriminant = Math.pow(b, 2) - 4 * a * c;
+	console.log(discriminant);
 
-	const d = Math.pow(b, 2) - 4 * a * c;
-	console.log(d);
-
-
-	if (d < 0) {
-		return arr = [];
-	} else if (d = 0) {
-		return arr[-b / (2 * a)]
+	if (discriminant < 0) {
+		arr = [];
+	} else if (discriminant === 0) {
+		arr = [-b / (2 * a)];
 	} else {
-		return arr[(-b + Math.sqrt(d)) / (2 * a), (-b - Math.sqrt(d)) / (2 * a)];
+		arr = [(-b + Math.sqrt(discriminant)) / (2 * a), (-b - Math.sqrt(discriminant)) / (2 * a)];
 	}
 
 	return arr;
-  
+
 }
-
-
 
 
 function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 	if (!isNaN(percent) && !isNaN(contribution) && !isNaN(amount) && !isNaN(countMonths)) {
-		let percent = 1 / percent;
+		const percentPerMonth = percent / 100 / 12;
 
-		let bodyCredit = amount - contribution;
-		let payment = bodyCredit * (1 / 12 * percent + (1 / 12 * percent / ((Math.pow(1 + percent, countMonths) - 1))));
-		let allSum = parseFloat((payment * countMonths).toFixed(2));
-		return allSum;
+		const bodyCredit = amount - contribution;
+		const payment = bodyCredit * (percentPerMonth + (percentPerMonth / (((1 + percentPerMonth) ** countMonths) - 1)));
+		const fullSumOfCredit = parseFloat((payment * countMonths).toFixed(2));
+		return fullSumOfCredit;
 
-		console.log("Ввод: " + calculateTotalMortgage() + "Вывод: " + calculateTotalMortgage.allSum);
 	}
 
 	return false;
