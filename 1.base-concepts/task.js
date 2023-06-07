@@ -39,7 +39,7 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 		let allSum = parseFloat((payment * countMonths).toFixed(2));
 		return allSum;
 
-		console.log("Ввод: " + calculateTotalMortgage(). "Вывод: " + calculateTotalMortgage.allSum);
+		console.log("Ввод: " + calculateTotalMortgage() + "Вывод: " + calculateTotalMortgage.allSum);
 	}
 
 	return false;
@@ -49,8 +49,8 @@ function calculateTotalMortgage(percent, contribution, amount, countMonths) {
 calculateTotalMortgage(10, 0, 50000, 12);
 calculateTotalMortgage(10, 1000, 50000, 12);
 calculateTotalMortgage(10, 0, 20000, 24);
-calculateTotalMortgage10, 1000, 20000, 24);
-calculateTotalMortgage10, 20000, 20000, 24);
+calculateTotalMortgage (10, 1000, 20000, 24);
+calculateTotalMortgage (10, 20000, 20000, 24);
 calculateTotalMortgage(10, 0, 10000, 36);
 calculateTotalMortgage(15, 0, 10000, 36);
 
